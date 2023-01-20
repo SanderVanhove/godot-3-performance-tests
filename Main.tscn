@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://CachedOwnerParent.gd" type="Script" id=2]
+[ext_resource path="res://CachedOwnerParentRunnerNode.gd" type="Script" id=3]
+[ext_resource path="res://VarVsDirect.gd" type="Script" id=4]
+[ext_resource path="res://Parent.gd" type="Script" id=5]
+[ext_resource path="res://Vectors.gd" type="Script" id=6]
+[ext_resource path="res://Operations.gd" type="Script" id=7]
+[ext_resource path="res://Arrays.gd" type="Script" id=8]
+[ext_resource path="res://Tweens.gd" type="Script" id=9]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Arrays" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Operations" type="Node2D" parent="."]
+position = Vector2( 160, 71 )
+script = ExtResource( 7 )
+
+[node name="VarVsDirect" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Vectors" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="CachedOwnerParent" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="CachedOwnerParent"]
+script = ExtResource( 5 )
+
+[node name="RunnerNode" type="Node2D" parent="CachedOwnerParent/Node2D"]
+script = ExtResource( 3 )
+
+[node name="Tweens" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Tween" type="Tween" parent="Tweens"]
